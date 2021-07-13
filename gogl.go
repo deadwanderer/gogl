@@ -20,3 +20,9 @@ func MglTest() {
 func GetVersion() string {
 	return gl.GoStr(gl.GetString(gl.VERSION))
 }
+
+func TriangleNormal(p1, p2, p3 mgl32.Vec3) mgl32.Vec3 {
+	U := p2.Sub(p1)
+	V := p2.Sub(p3)
+	return U.Cross(V).Normalize()
+}
